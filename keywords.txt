@@ -1,1 +1,9 @@
-
+PTSolns_I2Connect_KXTJ3_1057	KEYWORD1
+begin	KEYWORD2
+readAcceleration	KEYWORD2
+setRange	KEYWORD2
+setDataRate	KEYWORD2
+enableHighRes	KEYWORD2
+standby	KEYWORD2
+enableMotionInterrupt	KEYWORD2
+clearInterrupt	KEYWORD2
