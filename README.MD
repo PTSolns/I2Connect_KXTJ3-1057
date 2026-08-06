@@ -190,3 +190,61 @@ void loop()
 
 
 ---
+
+## Basic Functions
+
+### Initialization
+```cpp
+// Initializes sensor at default address 0x0E
+accel.begin();
+
+// Initializes sensor at alternative address 0x0F
+accel.begin(0x0F);
+
+```
+
+### Initialization
+
+The KXTJ3-1057 requires you to place it into standby mode before changing core registers like the data rate or range.
+```cpp
+accel.standby(true);    // Put to sleep
+accel.setRange(8);      // Adjust range to +/- 8g
+accel.standby(false);   // Wake back up
+```
+---
+## Typical Applications
+
+* Embedded motion detection and wake-on-motion
+* Device orientation and screen rotation triggers
+* Robotics tilt and balance sensing
+* Tap/Double-tap physical user interfaces
+* Predictive maintenance via vibration sensing
+---
+## Included Examples
+
+| Example                | Description                                          |
+| ---------------------- | ---------------------------------------------------- |
+| 01_BasicReadings          | Initialize the sensor and print X, Y, Z acceleration data over serial           |
+| 02_HighResolution       | Demonstrates configuring the sensor for ±16g range and 12/14-bit data  |
+| 03_TiltDetection     | Calculates roll and pitch angles based on the gravity vector         |
+| 04_MotionInterrupt        | Configures the hardware INT pin to trigger a wake-up on motion       |
+| 05_LowPowerSleep   | Shows how to manage standby states to conserve battery      |
+
+---
+
+## Documentation & Resources
+
+Additional resources are available through the PTSolns Documentation Repository, including:
+
+* Datasheets
+* Schematics
+* Pinout diagrams
+* 3D models
+* Fritzing files
+* Tutorials
+* Example projects
+
+* [PTSolns Documentation Repository](https://docs.ptsolns.com)
+* [PTSolns Website](https://ptsolns.com)
+* [Contact Support](https://ptsolns.com/contact-us)
+* [PTSolns IDE](https://ptsolns.com/ide)
