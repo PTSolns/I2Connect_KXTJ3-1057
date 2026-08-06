@@ -101,3 +101,77 @@ The PTSolns I2Connect: MUX module provides four independent I2C channels, allowi
 
 ---
 
+
+## *PTSolns IDE*
+
+The [*PTSolns IDE*](https://ptsolns.com/ide) is a free desktop application for programming PTSolns microcontroller development boards and compatible Arduino platforms.
+
+This library is available directly through both the PTSolns IDE Library Manager and the Arduino Library Manager.
+
+To install:
+
+1. Open the PTSolns IDE (or Arduino IDE).
+2. Open the Library Manager.
+3. Search for:
+
+```text
+I2Connect_KXTJ3
+```
+
+4. Click Install.
+
+Features of the [*PTSolns IDE*](https://ptsolns.com/ide) include:
+
+* Integrated board management
+* Built in serial monitor
+* Library management
+* Example project browser
+* Support for over 8,500 third party libraries
+* Built in CH340 USB driver support
+* Open source and community driven
+
+The [*PTSolns IDE*](https://ptsolns.com/ide) can be used alongside the Arduino IDE and supports many PTSolns development boards out of the box.
+
+---
+
+## Quick Start
+```cpp
+
+#include <Wire.h>
+#include "PTSolns_I2Connect_KXTJ3.h"
+
+PTSolns_I2Connect_KXTJ3 accel;
+
+void setup()
+{
+    Serial.begin(115200);
+    Wire.begin();
+
+    // Initialize the sensor. The library automatically defaults to 0x0E.
+    if (!accel.begin()) {
+        Serial.println("Failed to find KXTJ3-1057 module.");
+        while (true); // Halt if sensor is not found
+    }
+
+    // Set configuration: Output Data Rate (ODR) and Measurement Range
+    accel.setRange(2); // Set to +/- 2g
+    accel.setDataRate(50); // Set ODR to 50 Hz
+}
+
+void loop()
+{
+    float x, y, z;
+    
+    // Read the current acceleration data
+    if (accel.readAcceleration(&x, &y, &z)) {
+        Serial.print("X: "); Serial.print(x, 2);
+        Serial.print(" g | Y: "); Serial.print(y, 2);
+        Serial.print(" g | Z: "); Serial.print(z, 2);
+        Serial.println(" g");
+    }
+    
+    delay(100);
+}
+```
+
+---
