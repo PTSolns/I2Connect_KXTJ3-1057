@@ -175,3 +175,18 @@ void loop()
 ```
 
 ---
+
+## Library Functions
+
+| Function          | Description                                    |
+| ----------------- | -----------------------------------------------|
+| begin(address)          | Initialize the I2C hardware and sensor configuration  |
+| readAcceleration()   | Poll the X, Y, and Z registers and return values in 'g'  |
+| setRange(g)        | Sets the full-scale range (2, 4, 8, or 16) |
+| setDataRate(hz)           | Sets the Output Data Rate (ODR)   |
+| enableHighRes()   | Switches the sensor to 12-bit or 14-bit output mode         |
+| standby(state)    | Enter/Exit the ultra-low-power standby mode                 |
+| configInterrupt()     | Sets up the hardware INT pin for motion triggers        |
+
+
+---
