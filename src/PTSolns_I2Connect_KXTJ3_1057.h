@@ -9,12 +9,14 @@
 
 #define KXTJ3_XOUT_L       0x06
 #define KXTJ3_WHO_AM_I     0x0F
+#define KXTJ3_INT_REL      0x1A
 #define KXTJ3_CTRL_REG1    0x1B
 #define KXTJ3_CTRL_REG2    0x1D
 #define KXTJ3_INT_CTRL_REG1 0x1E
 #define KXTJ3_INT_CTRL_REG2 0x1F
 #define KXTJ3_DATA_CTRL_REG 0x21
-#define KXTJ3_INT_REL      0x1A
+#define KXTJ3_WAKEUP_THRESHOLD_H 0x6A
+#define KXTJ3_WAKEUP_THRESHOLD_L 0x6B
 
 #define KXTJ3_CHIP_ID      0x35
 
@@ -31,7 +33,9 @@ public:
     void enableHighRes(bool enable = true);
     
     void standby(bool sleep = true);
-    void configInterrupt(bool enable);
+    
+    void enableMotionInterrupt(float threshold_g = 0.5f);
+    void clearInterrupt();
 
 private:
     uint8_t _address;
