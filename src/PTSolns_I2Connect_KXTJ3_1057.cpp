@@ -106,14 +106,29 @@ void PTSolns_I2Connect_KXTJ3_1057::standby(bool sleep) {
     delay(2); 
 }
 
-void PTSolns_I2Connect_KXTJ3_1057::configInterrupt(bool enable) {
+void PTSolns_I2Connect_KXTJ3_1057::enableMotionInterrupt(float threshold_g) {
+    standby(true);
+
+    uint8_t ctrl1 = readRegister(KXTJ3_CTRL_REG1);
+    ctrl1 |= (1 << 1); 
+    writeRegister(KXTJ3_CTRL_REG1, ctrl1);
+
+    writeRegister(KXTJ3_INT_CTRL_REG2, 0x3F);
+
+    uint16_t threshold_counts = (uint16_t)(threshold_g * 256.0f);
+    writeRegister(KXTJ3_WAKEUP_THRESHOLD_H, (uint8_t)(threshold_counts >> 4));
+    writeRegister(KXTJ3_WAKEUP_THRESHOLD_L, (uint8_t)(threshold_counts << 4));
+
     uint8_t intCtrl = readRegister(KXTJ3_INT_CTRL_REG1);
-    if (enable) {
-        intCtrl |= (1 << 5); 
-    } else {
-        intCtrl &= ~(1 << 5); 
-    }
+    intCtrl |= (1 << 5) | (1 << 4); 
+    intCtrl &= ~(1 << 3);           
     writeRegister(KXTJ3_INT_CTRL_REG1, intCtrl);
+
+    standby(false);
+}
+
+void PTSolns_I2Connect_KXTJ3_1057::clearInterrupt() {
+    readRegister(KXTJ3_INT_REL);
 }
 
 void PTSolns_I2Connect_KXTJ3_1057::writeRegister(uint8_t reg, uint8_t data) {
