@@ -82,7 +82,7 @@ For maximum compatibility, the module also includes a preinstalled angled male h
 | Interface               | I2C                                    |
 | I2C Address             | 0x0E (Default) / 0x0F (Alt)            |
 | Operating Voltage       | 3.3 V / 5 V Rated (Onboard Regulator)  |
-| Communication Speed     | Standard & Fast (100 / 400 kHz)        |
+| Communication Speed     | Standard, Fast, & High-Speed (Up to 3.4 MHz) |
 | Resolutions             | 8-bit, 12-bit, 14-bit                  |
 | Header Pinout           | INT, SCL, SDA, 3V3, GND                |
 | Connectors              | 2x 4-pin 1mm JST SH                    |
