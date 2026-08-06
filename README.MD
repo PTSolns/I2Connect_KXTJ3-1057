@@ -96,6 +96,7 @@ The *I2Connect: KXTJ3-1057* module uses a default I2C address of:
 ```text
 0x0E
 ```
+
 This address can be modified to 0x0F by adjusting the ADDR solder pad on the rear of the module PCB. If more than two accelerometer modules are required in the same system, an I2C multiplexer must be used.
 The PTSolns I2Connect: MUX module provides four independent I2C channels, allowing multiple identically-addressed modules to be connected to a single microcontroller.
 ---
