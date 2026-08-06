@@ -115,7 +115,7 @@ To install:
 3. Search for:
 
 ```text
-I2Connect_KXTJ3
+I2Connect_KXTJ3_1057
 ```
 
 4. Click Install.
@@ -138,9 +138,9 @@ The [*PTSolns IDE*](https://ptsolns.com/ide) can be used alongside the Arduino I
 ```cpp
 
 #include <Wire.h>
-#include "PTSolns_I2Connect_KXTJ3.h"
+#include "PTSolns_I2Connect_KXTJ3_1057.h"
 
-PTSolns_I2Connect_KXTJ3 accel;
+PTSolns_I2Connect_KXTJ3_1057 accel;
 
 void setup()
 {
