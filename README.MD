@@ -47,7 +47,7 @@ The following modules are part of the *I2Connect* Series:
 * Multiple resolutions: 8-bit (low power), 12-bit, and 14-bit (high resolution).
 * Embedded wake-up and motion detection capabilities via the `INT` pin.
 * Default I2C address of 0x0E (Alternative 0x0F via jumper pad).
-* **Onboard voltage regulator** ensuring safe 3.3V and 5V logic and power compatibility.
+* Onboard voltage regulator ensuring safe 3.3V and 5V logic and power compatibility.
 * Dual Qwiic® compatible 4-pin JST SH connectors for daisy-chaining.
 * Breadboard-friendly 5-pin 2.54mm angled male header (GND, 3V3, SDA, SCL, INT).
 * Integrated power LED with a physical disconnect pad on the rear.
