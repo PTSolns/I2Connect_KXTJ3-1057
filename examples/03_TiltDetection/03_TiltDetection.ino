@@ -10,6 +10,25 @@
 // Converting raw gravity vectors into usable angles (roll and pitch) for 
 // orientation tracking.
 //
+// NOTE ON POWER CONSUMPTION:
+// According to the datasheet, the bare sensor current consumption is:
+// - 0.9 uA in Standby
+// - 10 uA in Low Power Mode
+// - 155 uA in High Resolution Mode
+//
+// Calling accel.begin() automatically initializes this library in High 
+// Resolution Mode (RES=1) to provide the most precise 12-bit/14-bit data. 
+// If you are deploying this code in a battery-operated environment, you must 
+// explicitly turn off high resolution by calling accel.enableHighRes(false); 
+// inside your setup() block immediately after initialization. Note that Low 
+// Power Mode is only available at output data rates of 200 Hz or lower.
+//
+// HARDWARE MODIFICATION FOR LOW POWER:
+// To achieve these microamp power states on the I2Connect module, you 
+// MUST cut the trace on the back of the board for the PWR LED. The power 
+// drawn by the LED is vastly greater than the IC's current draw (milliamps 
+// vs microamps) and will drain your battery if not disabled.
+//
 // DESCRIPTION
 // The I2Connect: KXTJ3-1057 is a compact, ultra-low power 3-axis MEMS accelerometer module.
 // It provides a simple and reliable way to add motion detection, tilt sensing, 
@@ -23,7 +42,7 @@
 
 #include <Wire.h>
 #include <math.h>
-#include <PTSolns_I2Connect_KXTJ3_1057.h>
+#include "PTSolns_I2Connect_KXTJ3_1057.h"
 
 // User Settings
 const uint32_t SERIAL_BAUD = 115200;
