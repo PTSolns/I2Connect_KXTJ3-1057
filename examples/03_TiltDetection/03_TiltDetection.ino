@@ -1,6 +1,6 @@
 // Example: Tilt Detection for I2Connect: KXTJ3-1057
 // Last Update: August 6, 2026
-// Support: http://ptsolns.com/contact-us[cite: 2]
+// Support: http://ptsolns.com/contact-us 
 //
 // WHAT THIS EXAMPLE DOES
 // Reads acceleration data and calculates the roll and pitch angles using 
@@ -18,8 +18,8 @@
 // of 0x0E. If multiple modules are required in the same system, the alternative 
 // address 0x0F or an I2C multiplexer must be used.
 // Like all I2Connect modules, it features dual Qwiic compatible connectors for 
-// easy daisy-chaining and an angled male header for breadboard use.[cite: 2] It is 
-// fully compatible with both 3.3V and 5V microcontroller systems.[cite: 2]
+// easy daisy-chaining and an angled male header for breadboard use.  It is 
+// fully compatible with both 3.3V and 5V microcontroller systems. 
 
 #include <Wire.h>
 #include <math.h>
