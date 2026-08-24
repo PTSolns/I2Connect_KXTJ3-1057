@@ -41,7 +41,7 @@
 // fully compatible with both 3.3V and 5V microcontroller systems. 
 
 #include <Wire.h>
-#include "PTSolns_I2Connect_KXTJ3_1057.h"
+#include <PTSolns_I2Connect_KXTJ3_1057.h>
 
 // User Settings
 const uint32_t SERIAL_BAUD = 115200;
