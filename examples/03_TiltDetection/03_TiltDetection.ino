@@ -42,7 +42,7 @@
 
 #include <Wire.h>
 #include <math.h>
-#include "PTSolns_I2Connect_KXTJ3_1057.h"
+#include <PTSolns_I2Connect_KXTJ3_1057.h>
 
 // User Settings
 const uint32_t SERIAL_BAUD = 115200;
