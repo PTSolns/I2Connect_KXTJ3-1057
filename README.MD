@@ -138,7 +138,7 @@ The [*PTSolns IDE*](https://ptsolns.com/ide) can be used alongside the Arduino I
 ```cpp
 
 #include <Wire.h>
-#include "PTSolns_I2Connect_KXTJ3_1057.h"
+#include <PTSolns_I2Connect_KXTJ3_1057.h>
 
 PTSolns_I2Connect_KXTJ3_1057 accel;
 
